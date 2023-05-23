@@ -26,5 +26,17 @@ module.exports = {
             .findOneAndDelete(
                 {_id: params.id}
             ).then(data => res.json(data))
-    }
-}
+    },
+    // newFriend: (req,res) => {
+    //     User
+    //         .findOneAndUpdate(
+    //             {_id: req.params.id}
+    //         )
+    // },
+    // removeFriend: ({params},res) => {
+    //     User
+    //         .findOneAndDelete(
+    //             {_id: params.id}
+    //         ).then(data => res.json(data))
+    // }
+ }
