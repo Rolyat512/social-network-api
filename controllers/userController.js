@@ -27,16 +27,26 @@ module.exports = {
                 {_id: params.id}
             ).then(data => res.json(data))
     },
-    // newFriend: (req,res) => {
-    //     User
-    //         .findOneAndUpdate(
-    //             {_id: req.params.id}
-    //         )
-    // },
-    // removeFriend: ({params},res) => {
-    //     User
-    //         .findOneAndDelete(
-    //             {_id: params.id}
-    //         ).then(data => res.json(data))
-    // }
+    newFriend: (req,res) => {
+        User
+            .findOneAndUpdate(
+                {_id: req.params.userId},
+                {$addToSet: {friends: req.params.friendId}},
+                {
+                    runValidators: true, 
+                    new: true
+                }
+            ).then(data => res.json(data))
+    },
+    removeFriend: ({params},res) => {
+        User
+            .findOneAndUpdate(
+                {_id: params.userId},
+                {$pull: {friends: params.friendId}},
+                {
+                    runValidators: true, 
+                    new: true
+                }
+            ).then(data => res.json(data))
+    }
  }

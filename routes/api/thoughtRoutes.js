@@ -1,11 +1,12 @@
-// const router = require('express').Router();
+const router = require('express').Router();
 
-// router
-//     .route('/')
-//     .get(getThoughts)
+router
+    .route('/')
+    .get(getThoughts)
+    .post()
 
-// router 
-//     .get(getSingleThought)
+router 
+    .get(getSingleThought)
 
 
-// module.exports = router;
+module.exports = router;

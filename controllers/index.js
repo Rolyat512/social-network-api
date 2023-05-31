@@ -1,5 +1,23 @@
 const router = require('express').Router();
 
-const { createUser, getUsers, getSingleUser, updateUser, removeUser, newFriend, removeFriend } = require('./userController');
+const { 
+    createUser, 
+    getUsers, 
+    getSingleUser, 
+    updateUser, 
+    removeUser, 
+    newFriend, 
+    removeFriend } = require('./userController');
 
-module.exports = { createUser, getUsers, getSingleUser, updateUser, removeUser, newFriend, removeFriend };
+const { createThought } = require("./thoughtControllers");
+
+module.exports = { 
+    createUser, 
+    getUsers, 
+    getSingleUser, 
+    updateUser, 
+    removeUser, 
+    newFriend, 
+    removeFriend,
+    createThought
+};
