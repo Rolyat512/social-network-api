@@ -1,12 +1,13 @@
 const router = require('express').Router();
+const {createThought, updateUser} = require('../../controllers');
 
 router
     .route('/')
-    .get(getThoughts)
-    .post()
+    // .get(createThought)
+    .post(createThought)
 
 router 
-    .get(getSingleThought)
+    // .get(getSingleThought)
 
 
 module.exports = router;
